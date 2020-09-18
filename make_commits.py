@@ -1,5 +1,13 @@
 import random
+import datetime
 import os
+import sys
+
+weekday = datetime.datetime.today().weekday()
+
+# I don't code on weekends, and neither do my bots that pretend to code. Weekends were hard-fought by labor unions
+if weekday > 4:
+	sys.exit()
 
 # zalgoification stolen from a code golf example, could I format this better? yes. will I? no.
 q=lambda z:''.join([v,v+''.join(random.choice(list(map(chr,range(768,815))))for i in range(int(random.normalvariate(10,5))))][v.isalpha()]for v in z)
